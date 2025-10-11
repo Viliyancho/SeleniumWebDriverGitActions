@@ -25,6 +25,6 @@ jobs:
     - name: Run Selenium Web Driver UI Tests Project 1
       run: dotnet test TestProject1 --no-build --verbosity normal
     - name: Run Selenium Web Driver UI Tests Project 2
-      run: dotnet test TestProject1 --no-build --verbosity normal
+      run: dotnet test TestProject2 --no-build --verbosity normal
     - name: Run Selenium Web Driver UI Tests Project 3
-      run: dotnet test TestProject1 --no-build --verbosity normal
+      run: dotnet test TestProject3 --no-build --verbosity normal
