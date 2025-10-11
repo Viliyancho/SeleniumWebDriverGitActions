@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using System.Collections.ObjectModel;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using OpenQA.Selenium.Interactions;
 
 namespace TestProject3
 {
@@ -11,12 +12,15 @@ namespace TestProject3
     public class WorkingWithDropDown
     {
         IWebDriver driver;
+        ChromeOptions options;
 
         [SetUp]
         public void SetUp()
         {
             // Create object of ChromeDriver
-            driver = new ChromeDriver();
+            options = new ChromeOptions();
+            options.AddArgument("--headless");
+            driver = new ChromeDriver(options);
 
             // Add implicit wait
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
