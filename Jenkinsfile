@@ -13,10 +13,11 @@ pipeline {
                 bat 'dotnet build --no-restore'
             }
         }
-
-        stage('Run Project1 Tests') {
-            steps {
-                bat 'dotnet test TestProject1 --no-build --verbosity normal'
+        stage('RunAllTests'){
+            parallel{
+                stage('Run Project1 Tests') {
+                    steps {
+                 bat 'dotnet test TestProject1 --no-build --verbosity normal'
             }
         }
 
@@ -31,5 +32,8 @@ pipeline {
                 bat 'dotnet test TestProject3 --no-build --verbosity normal'
             }
         }
+            }
+        }    
+        
     }
 }
